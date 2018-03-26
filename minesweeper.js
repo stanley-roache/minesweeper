@@ -1,7 +1,22 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
-// var board = 
+let boardCells = [];
+const boardEdge = 5;
+for (var i = 0; i < Math.pow(boardEdge,2); i++) {
+  boardCells.push(
+    {
+      row: Math.floor(i/boardEdge),
+      col: i%boardEdge,
+      isMine: false,
+      hidden: true
+    }
+  );
+}
+
+var board = {
+  cells: boardCells.slice()
+}; 
 
 function startGame () {
   // Don't remove this function call: it makes the game work!
